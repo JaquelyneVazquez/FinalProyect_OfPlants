@@ -17,7 +17,8 @@ abstract class PlantaAdapter(
     val context: Context,
     val res: Int,
     val list: ArrayList<ListaPlantaItem>
-) : RecyclerView.Adapter<PlantaAdapter.PlantasVH>() {
+
+    ) : RecyclerView.Adapter<PlantaAdapter.PlantasVH>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantaAdapter.PlantasVH {
         val vh = PlantasVH(LayoutInflater.from(context).inflate(res, null))

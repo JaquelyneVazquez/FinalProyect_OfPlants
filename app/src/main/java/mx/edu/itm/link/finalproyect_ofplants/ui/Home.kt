@@ -47,7 +47,7 @@ class Home : Fragment() {
                 //Pasando una respuesta del server a un JSONObject
                 val respuesta = Gson().fromJson(response, ListaPlanta::class.java)
                 Log.d("RESPUESTASERVIDOR", respuesta.toString())
-                binding.listViewHomePlantas.adapter = object :PlantaAdapter(view.context,R.layout.cardplantas, respuesta){
+                binding.recyclerViewHomePlantas.adapter = object :PlantaAdapter(view.context,R.layout.cardplantas, respuesta){
                     override fun verplanta(planta: ListaPlantaItem) {
                         viewModel.setPlantaSelect(planta)
                         findNavController().navigate(R.id.action_navigation_home_to_moreInfoPlanta)
@@ -55,7 +55,7 @@ class Home : Fragment() {
 
 
                 }
-                binding.listViewHomePlantas.layoutManager = GridLayoutManager(view.context, 1)
+                binding.recyclerViewHomePlantas.layoutManager = GridLayoutManager(view.context, 1)
 
             }
 
