@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="mx.edu.itm.link.finalproyect_ofplants.ui.Home"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_moreInfoPlanta"
+            app:destination="@id/moreInfoPlanta" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_buy"
+        android:name="mx.edu.itm.link.finalproyect_ofplants.ui.Buy"
+        android:label="Buy"
+        tools:layout="@layout/fragment_buy" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="mx.edu.itm.link.finalproyect_ofplants.ui.Profile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/moreInfoPlanta"
+        android:name="mx.edu.itm.link.finalproyect_ofplants.ui.MoreInfoPlanta"
+        android:label="fragment_more_info_planta"
+        tools:layout="@layout/fragment_more_info_planta" >
+        <action
+            android:id="@+id/action_moreInfoPlanta_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
