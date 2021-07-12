@@ -44,12 +44,14 @@ class MoreInfoPlanta : Fragment() {
             }
             binding.textViewCardMoreInfoOnlyAltura.setText(dimensiones)
             binding.textViewCardMoreInfoOnlydescripcion.setText(it.description)
+            // des.text= Html.fromHtml(lista[position].shortDescription)
 
             var categoria = ""
             for(i in it.categories){
                 categoria += "${i.name}"
             }
             binding.textViewCardMoreInfoOnlyCategoria.setText(categoria)
+
 
         })
     }
