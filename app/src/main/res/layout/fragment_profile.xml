@@ -28,7 +28,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewProfile_Name"
+            android:id="@+id/textViewProfileName"
             android:layout_width="350dp"
             android:layout_height="70dp"
             android:text="Nombre"
@@ -58,7 +58,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewProfile_Correo"
+            android:id="@+id/textViewProfileCorreo"
             android:layout_width="350dp"
             android:layout_height="70dp"
             android:text="Correo"
@@ -87,7 +87,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewProfile_NTelefono"
+            android:id="@+id/textViewProfileNTelefono"
             android:layout_width="350dp"
             android:layout_height="70dp"
             android:text="Telefono"

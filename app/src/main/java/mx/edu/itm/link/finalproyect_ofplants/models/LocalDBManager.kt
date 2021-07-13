@@ -9,6 +9,7 @@ class LocalDBManager (context: Context?,
                       name: String?,
                       factory: SQLiteDatabase.CursorFactory?,
                       version: Int):SQLiteOpenHelper(context, name, factory, version){
+
     override fun onCreate(db: SQLiteDatabase?) {
         db?.let {
             var sql = """
@@ -20,13 +21,12 @@ class LocalDBManager (context: Context?,
                     telefono TEXT
                ) 
             """
-
             it.execSQL(sql)
         }
     }
 
-
-    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {}
+    override fun onUpgrade(db: SQLiteDatabase?,
+                           p1: Int, p2: Int) {}
 
     @Throws
     fun removeUsuario() {
@@ -62,18 +62,55 @@ class LocalDBManager (context: Context?,
 
         val cursor = db.rawQuery(sql, null)
 
-        var usuario : Usuario? = null
+        var resultados: Usuario? = null
         if(cursor.moveToNext()) {
-            usuario = Usuario(
+            resultados = Usuario(
                 cursor.getInt(0),
                 cursor.getString(1),
                 cursor.getString(1),
                 cursor.getString(2),
                 cursor.getString(3)
             )
+
         }
         db.close()
 
-        return usuario
+        return resultados
+    }
+
+    @Throws
+    fun altaUsuario(usuario: Usuario){
+        val db = writableDatabase
+        val sql =
+            "INSERT INTO usuario (id,correo,contrasena,nombre, telefono)" +
+                    " VALUES ('${usuario.id}', '${usuario.correo}', '${usuario.password}','${usuario.nombre}', '${usuario.telefono}')"
+        db.execSQL(sql)
+        db.close()
+    }
+
+    @Throws
+    fun consultaUsuarios(): ArrayList<Usuario> {
+        val db = readableDatabase
+
+        val sql =
+            "SELECT id,correo,contrasena,nombre,telefono FROM usuario"
+
+        val cursor = db.rawQuery(sql, null)
+
+        val resultados = ArrayList<Usuario>()
+        while (cursor.moveToNext()) {
+            val usuario = Usuario(
+                cursor.getInt(0),
+                cursor.getString(1),
+                cursor.getString(2),
+                cursor.getString(3),
+                cursor.getString(4)
+            )
+
+            resultados.add(usuario)
+        }
+        db.close()
+
+        return resultados
     }
 }

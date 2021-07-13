@@ -12,6 +12,9 @@ import mx.edu.itm.link.finalproyect_ofplants.models.Usuario
 abstract class MyUtils {
 
     companion object {
+
+        lateinit var dataBaseSQL: LocalDBManager
+
         fun String.toas(c: Context) {
             Toast.makeText(c, this, Toast.LENGTH_LONG).show()
 
@@ -22,10 +25,10 @@ abstract class MyUtils {
             dbManager.setUsuario(usuario)
         }
 
-        fun Context.dbGet() : Usuario? {
+        /*fun Context.dbGet() : Usuario? {
             val dbManager = LocalDBManager(this,"my_app", null, 1)
             return dbManager.getUsuario()
-        }
+        }*/
 
         fun Context.dbRemove() {
             val dbManager = LocalDBManager(this,"my_app", null, 1)

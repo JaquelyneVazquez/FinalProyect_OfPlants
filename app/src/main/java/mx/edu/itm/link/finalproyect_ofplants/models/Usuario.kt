@@ -15,3 +15,4 @@ data class Usuario(
     @SerializedName("telefono")
     val telefono: String
 ): Serializable
+
