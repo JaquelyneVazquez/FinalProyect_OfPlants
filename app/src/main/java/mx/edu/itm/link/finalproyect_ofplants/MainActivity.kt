@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         MyUtils.dataBaseSQL = LocalDBManager(this, "BD", null, 1)
+        /*var dbLocal = LocalDBManager(this, "BD", null, 1)
+        val usuarios = dbLocal.consultaUsuarios()*/
 
         btnIniciarSesion = findViewById(R.id.btnInicioAccederLogin)
 

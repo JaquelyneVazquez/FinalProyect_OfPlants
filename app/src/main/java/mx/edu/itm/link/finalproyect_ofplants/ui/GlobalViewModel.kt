@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import mx.edu.itm.link.finalproyect_ofplants.models.ListaPlantaItem
+import mx.edu.itm.link.finalproyect_ofplants.models.Usuario
 
 class GlobalViewModel : ViewModel() {
 
@@ -18,5 +19,14 @@ class GlobalViewModel : ViewModel() {
     fun setPlantaSelect(plantaItem: ListaPlantaItem) {
         plantaSelect.value = plantaItem
 
+    }
+
+    //------------------------------Usuario---------------------------
+    private val usuarioSelect = MutableLiveData<Usuario>()
+
+    val getUsuarioSelect: LiveData<Usuario> get() = usuarioSelect
+
+    fun setUsuarioSelect(usuario: Usuario){
+        usuarioSelect.value = usuario
     }
 }

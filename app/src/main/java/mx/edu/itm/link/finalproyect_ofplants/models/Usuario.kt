@@ -6,13 +6,13 @@ import java.io.Serializable
 data class Usuario(
     @SerializedName("id")
     val id: Int,
-    @SerializedName("correo")
-    val correo: String,
-    @SerializedName("contrasena")
-    val password: String,
+    @SerializedName("usuario")
+    val usr: String,
+    @SerializedName("contrasenia")
+    val pass: String,
     @SerializedName("nombre")
     val nombre: String,
     @SerializedName("telefono")
-    val telefono: String
+    val celphone: String
 ): Serializable
 

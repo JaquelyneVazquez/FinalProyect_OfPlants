@@ -1,14 +1,22 @@
 package mx.edu.itm.link.finalproyect_ofplants.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import mx.edu.itm.link.finalproyect_ofplants.R
+import mx.edu.itm.link.finalproyect_ofplants.Utils.MyUtils
+import mx.edu.itm.link.finalproyect_ofplants.adapters.PlantaAdapter
 import mx.edu.itm.link.finalproyect_ofplants.databinding.FragmentMoreInfoPlantaBinding
+import mx.edu.itm.link.finalproyect_ofplants.models.ListaPlanta
+import mx.edu.itm.link.finalproyect_ofplants.models.ListaPlantaItem
 
 
 class MoreInfoPlanta : Fragment() {
@@ -52,7 +60,12 @@ class MoreInfoPlanta : Fragment() {
             }
             binding.textViewCardMoreInfoOnlyCategoria.setText(categoria)
 
-
         })
+
+        fun verplanta(planta: ListaPlantaItem) {
+            viewModel.setPlantaSelect(planta)
+            findNavController().navigate(R.id.action_moreInfoPlanta_to_navigation_buy)
+        }
     }
+
 }

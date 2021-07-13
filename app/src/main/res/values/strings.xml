@@ -8,6 +8,11 @@
     <!-- API -->
     <string name="api">https://apiplantas.herokuapp.com/</string>
     <!-- End API -->
+
+    <!-- API EXTERNA -->
+    <string name="apiusuario">http://198.199.83.125/my_eats_jaquelyne/</string>
+    <!-- End API -->
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

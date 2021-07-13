@@ -20,15 +20,19 @@ abstract class MyUtils {
 
         }
 
+        fun String.toast(c: Context) {
+            Toast.makeText(c, this, Toast.LENGTH_LONG).show()
+        }
+
         fun Context.dbSet(usuario: Usuario) {
             val dbManager = LocalDBManager(this,"my_app", null, 1)
             dbManager.setUsuario(usuario)
         }
 
-        /*fun Context.dbGet() : Usuario? {
+        fun Context.dbGet() : Usuario? {
             val dbManager = LocalDBManager(this,"my_app", null, 1)
             return dbManager.getUsuario()
-        }*/
+        }
 
         fun Context.dbRemove() {
             val dbManager = LocalDBManager(this,"my_app", null, 1)

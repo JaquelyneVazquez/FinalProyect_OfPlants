@@ -7,6 +7,19 @@
     android:background="@color/backgroundColor"
     tools:context=".ui.Profile">
 
+    <TextView
+        android:id="@+id/IinicioTitulo"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Mis datos."
+        android:textAlignment="center"
+        android:textColor="@color/tituloInicio"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"

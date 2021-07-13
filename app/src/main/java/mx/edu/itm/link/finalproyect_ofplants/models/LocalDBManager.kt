@@ -15,10 +15,9 @@ class LocalDBManager (context: Context?,
             var sql = """
                CREATE TABLE usuario(
                     id INTEGER PRIMARY KEY,
-                    correo TEXT,
-                    contrasena TEXT,
+                    usuario TEXT,
                     nombre TEXT,
-                    telefono TEXT
+                    celular TEXT
                ) 
             """
             it.execSQL(sql)
@@ -47,7 +46,7 @@ class LocalDBManager (context: Context?,
 
         db.execSQL(sql)
 
-        sql = "INSERT INTO usuario VALUES(${usuario.id},'${usuario.correo}','${usuario.password}','${usuario.nombre}', '${usuario.telefono}')"
+        sql = "INSERT INTO usuario VALUES(${usuario.id},'${usuario.usr}','${usuario.pass}','${usuario.nombre}', '${usuario.celphone}')"
 
         db.execSQL(sql)
 
@@ -82,8 +81,8 @@ class LocalDBManager (context: Context?,
     fun altaUsuario(usuario: Usuario){
         val db = writableDatabase
         val sql =
-            "INSERT INTO usuario (id,correo,contrasena,nombre, telefono)" +
-                    " VALUES ('${usuario.id}', '${usuario.correo}', '${usuario.password}','${usuario.nombre}', '${usuario.telefono}')"
+            "INSERT INTO usuario (id,usuario,nombre, celular)" +
+                    " VALUES ('${usuario.id}', '${usuario.usr}', '${usuario.nombre}', '${usuario.celphone}')"
         db.execSQL(sql)
         db.close()
     }
@@ -93,7 +92,7 @@ class LocalDBManager (context: Context?,
         val db = readableDatabase
 
         val sql =
-            "SELECT id,correo,contrasena,nombre,telefono FROM usuario"
+            "SELECT id, usuario, nombre, celular FROM usuario"
 
         val cursor = db.rawQuery(sql, null)
 

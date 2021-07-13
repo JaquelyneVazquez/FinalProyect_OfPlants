@@ -10,7 +10,8 @@
         android:label="Sale Of Plants"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FinalProyect_OfPlants">
+        android:theme="@style/Theme.FinalProyect_OfPlants"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"></activity>
