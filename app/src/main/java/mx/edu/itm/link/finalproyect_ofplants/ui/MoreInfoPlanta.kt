@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.gson.Gson
@@ -66,6 +67,16 @@ class MoreInfoPlanta : Fragment() {
             viewModel.setPlantaSelect(planta)
             findNavController().navigate(R.id.action_moreInfoPlanta_to_navigation_buy)
         }
+
+        viewModel.getcompra.observe(viewLifecycleOwner, Observer {
+
+            binding.BtnCardMoreInfoOnlyComprar.setOnClickListener{
+
+                findNavController().navigate(R.id.action_moreInfoPlanta_to_navigation_buy)
+
+
+            }
+        })
     }
 
 }
